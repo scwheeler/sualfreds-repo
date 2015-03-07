@@ -1,0 +1,12 @@
+
+[B][COLOR=FF56ADDA]v4.0.8[/COLOR][/B]
+• ExtendedInfo: Added video list support of the addon
+• Added: Support to customize widgets and menu item position in the menu management dialog
+• Added: 4x custom widgets groups for the home menu
+• Added: Playlist widgets support for the home menu
+• Added: TuneIn "Local Streams" Widget
+• Added: TuneIn widget to the QuickNav feature
+• Changed: Skin provided menu items
+• Added: More backgrounds to the menu management
+• And a lot of fixes and small improvements... 
+
