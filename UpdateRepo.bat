@@ -1,4 +1,14 @@
 @echo off
+echo. 
+echo Klone BelloFredo WorkDir
+echo. 
+XCOPY ..\..\Bello-Kodi-15.x-Nightlies\trunk skin.bellofredo /E /C /Q /I /Y
+echo. 
+echo Loesche nicht gebrauchte Dateien
+echo. 
+del /q skin.bellofredo\media\Textures.xbt
+del /q skin.bellofredo\720p\script-skinshortcuts-includes.xml
+pause
 setlocal enabledelayedexpansion
 set tools_dir=%~dp0tools
 
@@ -32,8 +42,7 @@ for /f %%f in ('dir /b /a:d') do if exist %%f\addon.xml (
 		IF not exist temp mkdir temp	
 		IF not exist temp\%%f mkdir temp\%%f
 		IF not exist temp\%%f\oldreleases mkdir temp\%%f\oldreleases
-		IF not exist temp\%%f\oldreleases\dummy.txt echo. > temp\%%f\oldreleases\dummy.txt
-        if exist %%f\720p\script-skinshortcuts-includes.xml del /q %%f\720p\script-skinshortcuts-includes.xml
+		IF not exist temp\%%f\oldreleases\dummy.txt echo. > temp\%%f\oldreleases\dummy.txt        
 		move "%%f\%%f*.zip" temp\%%f\oldreleases >nul 2>&1
 		if exist %%f\media (
 			echo.
@@ -43,7 +52,7 @@ for /f %%f in ('dir /b /a:d') do if exist %%f\addon.xml (
 			rd /S /Q %%f\media
 			mkdir %%f\media
 			echo. 
-			echo Erstelle Textures.xbt
+			echo Erstelle Textures.xbt ... wart a weile Bub
 			echo.
 			%tools_dir%\TexturePacker -input temp\%%f\media -output %%f\media\Textures.xbt >nul 2>&1
 			echo.
@@ -72,3 +81,15 @@ for /f %%f in ('dir /b /a:d') do if exist %%f\addon.xml (
 echo ^</addons^> >> %~dp0addons.xml
 for /f "delims= " %%a in ('%tools_dir%\fciv -md5 %~dp0addons.xml') do echo %%a > %~dp0addons.xml.md5
 pause
+
+echo.
+echo. [ SVN Committer ]
+:: The two lines below should be changed to suit your system.
+set SOURCE=E:\github\sualfreds-repo\
+set SVN=C:\Program Files\TortoiseSVN\bin
+echo.
+echo. Committing %SOURCE% to SVN...
+"%SVN%\TortoiseProc.exe" /command:commit /path:"%SOURCE%" /closeonend:3
+echo. done.
+echo.
+echo. Operation complete.
