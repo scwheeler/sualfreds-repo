@@ -1,15 +1,52 @@
 @echo off
-echo. 
-echo Klone BelloFredo WorkDir
-echo. 
-XCOPY ..\..\Bello-Kodi-15.x-Nightlies\trunk skin.bellofredo /E /C /Q /I /Y
-echo. 
-echo Loesche nicht gebrauchte Dateien
-echo. 
-del /q skin.bellofredo\media\Textures.xbt
-del /q skin.bellofredo\UpdateRepo.bat
-del /q skin.bellofredo\720p\script-skinshortcuts-includes.xml
-pause
+
+TITEL Container
+
+:input
+cls
+ECHO.
+ECHO ************************************************
+ECHO * 1 = Klone Nightlies *
+ECHO * 2 = Update Repo Files *
+ECHO * 3 = Repo Commit *
+echo * *
+Echo * 4 = Beenden *
+ECHO ************************************************
+ECHO.
+
+color 0d
+choice /C:1234 
+
+
+if errorlevel 4 goto Abbruch
+if errorlevel 3 goto Commit
+if errorlevel 2 goto Update
+if errorlevel 1 goto Klone
+
+
+Rem *** 4 ***
+:Abbruch
+goto ende
+
+
+Rem *** 3 ***
+:Commit
+echo.
+echo. [ SVN Committer ]
+:: The two lines below should be changed to suit your system.
+set SOURCE=E:\github\sualfreds-repo\
+set SVN=C:\Program Files\TortoiseSVN\bin
+echo.
+echo. Committing %SOURCE% to SVN...
+"%SVN%\TortoiseProc.exe" /command:commit /path:"%SOURCE%" /closeonend:3
+echo. done.
+echo.
+echo. Operation complete.
+goto input
+
+
+Rem *** 2 ***
+:Update
 setlocal enabledelayedexpansion
 set tools_dir=%~dp0tools
 
@@ -76,21 +113,31 @@ for /f %%f in ('dir /b /a:d') do if exist %%f\addon.xml (
 		echo.
 		echo. 
     ) else (
-        echo %%f-!version!.zip bereits aktuell
+        echo.
+		echo %%f-!version!.zip bereits aktuell
     )
 )
 echo ^</addons^> >> %~dp0addons.xml
 for /f "delims= " %%a in ('%tools_dir%\fciv -md5 %~dp0addons.xml') do echo %%a > %~dp0addons.xml.md5
+echo.
 pause
+goto input
 
-echo.
-echo. [ SVN Committer ]
-:: The two lines below should be changed to suit your system.
-set SOURCE=E:\github\sualfreds-repo\
-set SVN=C:\Program Files\TortoiseSVN\bin
-echo.
-echo. Committing %SOURCE% to SVN...
-"%SVN%\TortoiseProc.exe" /command:commit /path:"%SOURCE%" /closeonend:3
-echo. done.
-echo.
-echo. Operation complete.
+
+Rem *** 1 ***
+:Klone
+echo. 
+echo Klone BelloFredo WorkDir
+echo. 
+XCOPY ..\..\Bello-Kodi-15.x-Nightlies\trunk skin.bellofredo /E /C /Q /I /Y
+echo. 
+echo Loesche nicht gebrauchte Dateien
+echo. 
+del /q skin.bellofredo\media\Textures.xbt
+del /q skin.bellofredo\UpdateRepo.bat
+del /q skin.bellofredo\720p\script-skinshortcuts-includes.xml
+pause
+goto input
+
+
+:ende
