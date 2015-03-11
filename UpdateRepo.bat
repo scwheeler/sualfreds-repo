@@ -7,6 +7,7 @@ echo.
 echo Loesche nicht gebrauchte Dateien
 echo. 
 del /q skin.bellofredo\media\Textures.xbt
+del /q skin.bellofredo\UpdateRepo.bat
 del /q skin.bellofredo\720p\script-skinshortcuts-includes.xml
 pause
 setlocal enabledelayedexpansion
