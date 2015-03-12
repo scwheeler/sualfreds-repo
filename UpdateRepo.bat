@@ -73,11 +73,10 @@ for /f %%f in ('dir /b /a:d') do if exist %%f\addon.xml (
     )
     if not exist %%f\%%f-!version!.zip (
         echo. 
-		echo NEUE VERSION von %%f !
-		echo. 
-		echo Erstelle Backups bisheriger Releases
 		echo.
+		echo NEUE VERSION von %%f !		
 		if exist "%%f\%%f*.zip" (
+		echo Erstelle Backups bisheriger Releases
 		IF not exist temp mkdir temp	
 		IF not exist temp\%%f mkdir temp\%%f
 		IF not exist temp\%%f\oldreleases mkdir temp\%%f\oldreleases
@@ -86,38 +85,29 @@ for /f %%f in ('dir /b /a:d') do if exist %%f\addon.xml (
 		if exist %%f\media (
 			if "%%f"=="skin.bellofredo" (
 				echo Loesche nicht gebrauchte Dateien
-				del /q skin.bellofredo\media\Textures.xbt
-				del /q skin.bellofredo\UpdateRepo.bat
-				del /q skin.bellofredo\720p\script-skinshortcuts-includes.xml
+				del /q skin.bellofredo\media\Textures.xbt >nul 2>&1
+				del /q skin.bellofredo\UpdateRepo.bat >nul 2>&1
+				del /q skin.bellofredo\720p\script-skinshortcuts-includes.xml >nul 2>&1
 			)
-			echo.
 			echo Starte Textures.xbt Source-Kram
-			echo.	
+			IF not exist temp mkdir temp	
+			IF not exist temp\%%f mkdir temp\%%f			
 			XCOPY %%f\media temp\%%f\media /E /C /Q /I /Y
 			rd /S /Q %%f\media
 			mkdir %%f\media
-			echo. 
 			echo Erstelle Textures.xbt ... wart a weile Bub
-			echo.
 			%tools_dir%\TexturePacker -input temp\%%f\media -output %%f\media\Textures.xbt >nul 2>&1
-			echo.
 		)
 		echo Packe %%f-!version!.zip
-		echo.
 		%tools_dir%\7z a %%f\%%f-!version!.zip %%f -tzip -ax!%%f*.zip> nul
 		if exist %%f\media (
-			echo.
 			echo Stelle original Media Ordner wieder her
-			echo.
 			rd /s /q %%f\media
 			mkdir %%f\media
 			XCOPY temp\%%f\media %%f\media /E /C /Q /I /Y
 			rd /s /q temp\%%f\media
 		)
-		echo. 
-		echo. 
 		echo %%f-!version!.zip Prozess fertig.
-		echo.
 		echo. 
     ) else (
         echo.
