@@ -34,7 +34,7 @@ Rem *** 3 ***
 echo.
 echo. [ SVN Committer ]
 :: The two lines below should be changed to suit your system.
-set SOURCE=E:\github\sualfreds-repo\
+set SOURCE=%~dp0
 set SVN=C:\Program Files\TortoiseSVN\bin
 echo.
 echo. Committing %SOURCE% to SVN...
@@ -83,12 +83,12 @@ for /f %%f in ('dir /b /a:d') do if exist %%f\addon.xml (
 		IF not exist temp\%%f\oldreleases\dummy.txt echo. > temp\%%f\oldreleases\dummy.txt        
 		move "%%f\%%f*.zip" temp\%%f\oldreleases >nul 2>&1
 		if exist %%f\media (
-		echo. 
-			echo Loesche nicht gebrauchte Dateien
-			echo. 
-			if "%%f"=="skin.bellofredo" del /q skin.bellofredo\media\Textures.xbt
-			if "%%f"=="skin.bellofredo" del /q skin.bellofredo\UpdateRepo.bat
-			if "%%f"=="skin.bellofredo" del /q skin.bellofredo\720p\script-skinshortcuts-includes.xml
+			if "%%f"=="skin.bellofredo" (
+				echo Loesche nicht gebrauchte Dateien
+				del /q skin.bellofredo\media\Textures.xbt
+				del /q skin.bellofredo\UpdateRepo.bat
+				del /q skin.bellofredo\720p\script-skinshortcuts-includes.xml
+			)
 			echo.
 			echo Starte Textures.xbt Source-Kram
 			echo.	
@@ -136,6 +136,10 @@ echo.
 echo Klone BelloFredo WorkDir
 echo. 
 XCOPY ..\..\Bello-Kodi-15.x-Nightlies\trunk skin.bellofredo /E /C /Q /I /Y
+echo Loesche nicht gebrauchte Dateien
+del /q skin.bellofredo\media\Textures.xbt
+del /q skin.bellofredo\UpdateRepo.bat
+del /q skin.bellofredo\720p\script-skinshortcuts-includes.xml
 pause
 goto input
 
