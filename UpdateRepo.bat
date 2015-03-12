@@ -83,6 +83,12 @@ for /f %%f in ('dir /b /a:d') do if exist %%f\addon.xml (
 		IF not exist temp\%%f\oldreleases\dummy.txt echo. > temp\%%f\oldreleases\dummy.txt        
 		move "%%f\%%f*.zip" temp\%%f\oldreleases >nul 2>&1
 		if exist %%f\media (
+			echo. 
+			echo Loesche nicht gebrauchte Dateien
+			echo. 
+			del /q skin.bellofredo\media\Textures.xbt
+			del /q skin.bellofredo\UpdateRepo.bat
+			del /q skin.bellofredo\720p\script-skinshortcuts-includes.xml
 			echo.
 			echo Starte Textures.xbt Source-Kram
 			echo.	
@@ -130,12 +136,6 @@ echo.
 echo Klone BelloFredo WorkDir
 echo. 
 XCOPY ..\..\Bello-Kodi-15.x-Nightlies\trunk skin.bellofredo /E /C /Q /I /Y
-echo. 
-echo Loesche nicht gebrauchte Dateien
-echo. 
-del /q skin.bellofredo\media\Textures.xbt
-del /q skin.bellofredo\UpdateRepo.bat
-del /q skin.bellofredo\720p\script-skinshortcuts-includes.xml
 pause
 goto input
 
