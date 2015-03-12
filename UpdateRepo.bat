@@ -77,11 +77,12 @@ for /f %%f in ('dir /b /a:d') do if exist %%f\addon.xml (
 		echo. 
 		echo Erstelle Backups bisheriger Releases
 		echo.
+		if exist "%%f\%%f*.zip" (
 		IF not exist temp mkdir temp	
 		IF not exist temp\%%f mkdir temp\%%f
 		IF not exist temp\%%f\oldreleases mkdir temp\%%f\oldreleases
-		IF not exist temp\%%f\oldreleases\dummy.txt echo. > temp\%%f\oldreleases\dummy.txt        
 		move "%%f\%%f*.zip" temp\%%f\oldreleases >nul 2>&1
+		)
 		if exist %%f\media (
 			if "%%f"=="skin.bellofredo" (
 				echo Loesche nicht gebrauchte Dateien
