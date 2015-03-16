@@ -35,7 +35,7 @@ echo.
 echo. [ SVN Committer ]
 :: The two lines below should be changed to suit your system.
 set SOURCE=%~dp0
-set SVN=C:\Program Files\TortoiseSVN\bin
+set SVN=C:\Program Files\TortoiseGit\bin
 echo.
 echo. Committing %SOURCE% to SVN...
 "%SVN%\TortoiseProc.exe" /command:commit /path:"%SOURCE%" /closeonend:3
