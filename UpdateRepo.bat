@@ -38,10 +38,11 @@ set SOURCE=%~dp0
 set SVN=C:\Program Files\TortoiseGit\bin
 echo.
 echo. Committing %SOURCE% to SVN...
-"%SVN%\TortoiseProc.exe" /command:commit /path:"%SOURCE%" /closeonend:3
+"%SVN%\TortoiseGitProc.exe" /command:commit /path:"%SOURCE%" /closeonend:3
 echo. done.
 echo.
 echo. Operation complete.
+pause
 goto input
 
 
