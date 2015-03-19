@@ -1,0 +1,10 @@
+# XBMC Media Center language file
+# Addon Name: ArtworkDownloader GUI Context Menu Item
+# Addon id: context.getextraart.dialog
+msgid ""
+msgstr ""
+
+msgctxt "#30000"
+msgid "Get Extra Art"
+msgstr ""
+
