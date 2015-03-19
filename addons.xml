@@ -33,7 +33,7 @@
   <extension point="kodi.addon.metadata"> 
     <platform>all</platform> 
     <summary lang="en">Open ArtworkDownloader GUI from context menu in library</summary> 
-    <description lang="en">Open ArtworkDownloader dialog from context menu in library. Needs ArtworkDownloader installed and activated. Available for movies, tv shows and seasons currently.</description> 
+    <description lang="en">Open ArtworkDownloader dialog from context menu in library. Needs ArtworkDownloader installed and activated. Available for moviesa and tv shows.</description> 
     <license>GNU GENERAL PUBLIC LICENSE. Version 3, 29 June 2007</license> 
     <forum></forum> 
     <source></source> 
