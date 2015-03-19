@@ -127,7 +127,7 @@ Rem *** 1 ***
 echo. 
 echo Klone BelloFredo WorkDir
 echo. 
-XCOPY ..\..\Bello-Kodi-15.x-Nightlies\trunk skin.bellofredo /E /C /Q /I /Y
+XCOPY ..\Bello-Kodi-15.x-Nightlies skin.bellofredo /E /C /Q /I /Y
 echo Loesche nicht gebrauchte Dateien
 del /q skin.bellofredo\media\Textures.xbt
 del /q skin.bellofredo\UpdateRepo.bat
