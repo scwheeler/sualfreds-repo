@@ -76,7 +76,7 @@
 			<animation effect="fade" time="300" start="0" end="100" tween="sine" easing="out">Visible</animation>
 			<animation effect="fade" time="300" start="100" end="0" tween="sine" easing="in">Hidden</animation>
 			<colordiffuse>ddFFFFFF</colordiffuse>
-			<visible>Window.IsActive(progressdialog) | Window.IsActive(okdialog) | Window.IsActive(yesnodialog) | [Window.IsActive(contextmenu) + ]</visible>	
+			<visible>Window.IsActive(progressdialog) | Window.IsActive(okdialog) | Window.IsActive(yesnodialog) | [Window.IsActive(contextmenu)]</visible>	
 		</control>
 		<control type="image">
 			<include>FullscreenDimensions</include>
@@ -1818,9 +1818,9 @@
 		<value condition="!Window.IsVisible(3050) + stringcompare(Skin.String(QuickNavWidgetMusicType),5)">musicdb://recentlyplayedalbums/</value>
 	</variable>
 	<variable name="QuickNav_WidgetListContentTuneIn">
-		<value condition="StringCompare(Container(20).ListItem.Property(widget),tunein) + stringcompare(Skin.String(QuickNavWidgetTuneInType),1)">plugin://plugin.audio.tuneinradio/?path=recents</value>
-		<value condition="StringCompare(Container(20).ListItem.Property(widget),tunein) + stringcompare(Skin.String(QuickNavWidgetTuneInType),2)">plugin://plugin.audio.tuneinradio/?path=browse&amp;id=presets</value>
-		<value condition="StringCompare(Container(20).ListItem.Property(widget),tunein) + stringcompare(Skin.String(QuickNavWidgetTuneInType),3)">plugin://plugin.audio.tuneinradio/?path=browse&amp;c=local</value>
+		<value condition="!Window.IsVisible(3050) + stringcompare(Skin.String(QuickNavWidgetTuneInType),1)">plugin://plugin.audio.tuneinradio/?path=recents</value>
+		<value condition="!Window.IsVisible(3050) + stringcompare(Skin.String(QuickNavWidgetTuneInType),2)">plugin://plugin.audio.tuneinradio/?path=browse&amp;id=presets</value>
+		<value condition="!Window.IsVisible(3050) + stringcompare(Skin.String(QuickNavWidgetTuneInType),3)">plugin://plugin.audio.tuneinradio/?path=browse&amp;c=local</value>
 	</variable>
 	<variable name="QuickNav_WidgetListContentPlaylists">
 		<value condition="!Window.IsVisible(3050)">$INFO[Container(20).ListItem.Property(widgetPlaylist)]</value>
@@ -1929,9 +1929,9 @@
 		<value condition="[Control.HasFocus(45) | Control.HasFocus(450)] + stringcompare(Skin.String(QuickNavWidgetMusicType),5) + IsEmpty(Container(450).ListItem.DBID)">$LOCALIZE[340]</value>
 		<value condition="[Control.HasFocus(45) | Control.HasFocus(450)]">$INFO[Container(450).ListItem.Property(Listeners),,  $LOCALIZE[15200] $LOCALIZE[20455]]</value>
 
-		<value condition="Control.HasFocus(550) + stringcompare(Skin.String(QuickNavWidgetTuneInType),1">$LOCALIZE[31286]</value>
-		<value condition="Control.HasFocus(550) + stringcompare(Skin.String(QuickNavWidgetTuneInType),2">$LOCALIZE[31287]</value>
-		<value condition="Control.HasFocus(550) + stringcompare(Skin.String(QuickNavWidgetTuneInType),3">$LOCALIZE[31292]</value>
+		<value condition="Control.HasFocus(550) + stringcompare(Skin.String(QuickNavWidgetTuneInType),1)">$LOCALIZE[31286]</value>
+		<value condition="Control.HasFocus(550) + stringcompare(Skin.String(QuickNavWidgetTuneInType),2)">$LOCALIZE[31287]</value>
+		<value condition="Control.HasFocus(550) + stringcompare(Skin.String(QuickNavWidgetTuneInType),3)">$LOCALIZE[31292]</value>
 
 		<value condition="Control.HasFocus(750)">$LOCALIZE[31052]</value>
 		<value condition="Control.HasFocus(751)">$LOCALIZE[31052]</value>
@@ -1952,37 +1952,63 @@
 
 	<variable name="QuickNavWidgetThumb">
 		<value condition="!IsEmpty(ListItem.Art(poster))">$INFO[ListItem.Art(poster)]</value>
-		<value condition="!IsEmpty(ListItem.Art(tvshow.poster))">$INFO[ListItem.Art(tvshow.poster)]</value>
-		<value condition="!IsEmpty(ListItem.Art(tvshow.poster))">$INFO[ListItem.Art(tvshow.poster)]</value>
-		<value condition="Control.IsVisible(450) + IsEmpty(ListItem.Thumb)">defaultmusicrecentlyplayed.png</value>
-		<value>$INFO[ListItem.Thumb]</value>
+  		<value condition="IsEmpty(ListItem.Art(season.poster)) + !IsEmpty(ListItem.Art(tvshow.poster))">$INFO[ListItem.Art(tvshow.poster)]</value>
+  		<value>$INFO[ListItem.Icon]</value>
 	</variable>
 
 	<variable name="QuickNavWidgetFanart">
+		
+		<!--movies-->
 		<value condition="[Control.HasFocus(25) | Control.HasFocus(250)] + !IsEmpty(Container(250).ListItem.Art(fanart))">$INFO[Container(250).ListItem.Art(fanart)]</value>
 		<value condition="[Control.HasFocus(25) | Control.HasFocus(250)] + !IsEmpty(Container(250).ListItem.Property(FanartImage))">$INFO[Container(250).ListItem.Property(FanartImage)]</value>
 		<value condition="[Control.HasFocus(25) | Control.HasFocus(250)] + IsEmpty(Container(250).ListItem.Art(fanart)) + IsEmpty(Container(250).ListItem.Property(FanartImage))">special://skin//extras/backgrounds/SKINDEFAULT.jpg</value>
+		
+		<!--tvshows-->
 		<value condition="[Control.HasFocus(35) | Control.HasFocus(350)] + !IsEmpty(Container(350).ListItem.Art(fanart))">$INFO[Container(350).ListItem.Art(fanart)]</value>
 		<value condition="[Control.HasFocus(35) | Control.HasFocus(350)] + !IsEmpty(Container(350).ListItem.Property(FanartImage))">$INFO[Container(350).ListItem.Property(FanartImage)]</value>
 		<value condition="[Control.HasFocus(35) | Control.HasFocus(350)] + IsEmpty(Container(350).ListItem.Art(fanart)) + IsEmpty(Container(350).ListItem.Property(FanartImage))">special://skin//extras/backgrounds/SKINDEFAULT.jpg</value>
+		
+		<!--music-->
 		<value condition="[Control.HasFocus(45) | Control.HasFocus(450)] + !IsEmpty(Container(450).ListItem.Art(fanart))">$INFO[Container(450).ListItem.Art(fanart)]</value>
 		<value condition="[Control.HasFocus(45) | Control.HasFocus(450)] + !IsEmpty(Container(450).ListItem.Property(FanartImage))">$INFO[Container(450).ListItem.Property(FanartImage)]</value>
 		<value condition="[Control.HasFocus(45) | Control.HasFocus(450)] + IsEmpty(Container(450).ListItem.Art(fanart)) + IsEmpty(Container(450).ListItem.Property(FanartImage))">special://skin//extras/backgrounds/SKINDEFAULT.jpg</value>
+		
+		<!--rss video feed-->
 		<value condition="[Control.HasFocus(65) | Control.HasFocus(650)] + !IsEmpty(Container(650).ListItem.Art(fanart))">$INFO[Container(650).ListItem.Art(fanart)]</value>
 		<value condition="[Control.HasFocus(65) | Control.HasFocus(650)] + !IsEmpty(Container(650).ListItem.Property(FanartImage))">$INFO[Container(650).ListItem.Property(FanartImage)]</value>    
+		
+		<!--playlists-->
 		<value condition="Control.HasFocus(651) + !IsEmpty(Container(651).ListItem.Art(fanart))">$INFO[Container(651).ListItem.Art(fanart)]</value>
-		<value condition="Control.HasFocus(651) + !IsEmpty(Container(651).ListItem.Property(FanartImage))">$INFO[Container(651).ListItem.Property(FanartImage)]</value>
-		<value condition="Control.HasFocus(651) + IsEmpty(Container(651).ListItem.Art(fanart)) + IsEmpty(Container(651).ListItem.Property(FanartImage))">special://skin//extras/backgrounds/SKINDEFAULT.jpg</value>		
+		<value condition="Control.HasFocus(651) + IsEmpty(Container(651).ListItem.Art(fanart))">special://skin//extras/backgrounds/SKINDEFAULT.jpg</value>		
 		<value condition="Control.HasFocus(652) + !IsEmpty(Container(652).ListItem.Art(fanart))">$INFO[Container(652).ListItem.Art(fanart)]</value>
-		<value condition="Control.HasFocus(652) + !IsEmpty(Container(652).ListItem.Property(FanartImage))">$INFO[Container(652).ListItem.Property(FanartImage)]</value>
-		<value condition="Control.HasFocus(652) + IsEmpty(Container(652).ListItem.Art(fanart)) + IsEmpty(Container(652).ListItem.Property(FanartImage))">special://skin//extras/backgrounds/SKINDEFAULT.jpg</value>		
-		<value condition="Control.HasFocus(750) + !IsEmpty(Container(750).ListItem.Art(fanart))">$INFO[Container(750).ListItem.Art(fanart)]</value>
-		<value condition="Control.HasFocus(750) + !IsEmpty(Container(750).ListItem.Property(FanartImage))">$INFO[Container(750).ListItem.Property(FanartImage)]</value>
-		<!--<value condition="Control.HasFocus(750) + IsEmpty(Container(750).ListItem.Art(fanart)) + IsEmpty(Container(750).ListItem.Property(FanartImage))">special://skin//extras/backgrounds/SKINDEFAULT.jpg</value>	-->
+		<value condition="Control.HasFocus(652) + IsEmpty(Container(652).ListItem.Art(fanart))">special://skin//extras/backgrounds/SKINDEFAULT.jpg</value>		
+		
+		<!--Amazon Sandmann -->
+		<value condition="Control.HasFocus(750) + !IsEmpty(Container(750).ListItem.Art(fanart))">$INFO[Container(750).ListItem.Art(fanart)]</value>		
+		<value condition="Control.HasFocus(750) + IsEmpty(Container(750).ListItem.Art(fanart))">special://skin//extras/backgrounds/SKINDEFAULT.jpg</value>		
+		
+		<!--Amazon AddonScriptor-->
 		<value condition="Control.HasFocus(751) + !IsEmpty(Container(751).ListItem.Art(fanart))">$INFO[Container(751).ListItem.Art(fanart)]</value>
-		<value condition="Control.HasFocus(751) + !IsEmpty(Container(751).ListItem.Property(FanartImage))">$INFO[Container(751).ListItem.Property(FanartImage)]</value>
-		<!--<value condition="Control.HasFocus(751) + IsEmpty(Container(751).ListItem.Art(fanart)) + IsEmpty(Container(751).ListItem.Property(FanartImage))">special://skin//extras/backgrounds/SKINDEFAULT.jpg</value>-->
-
+		<value condition="Control.HasFocus(751) + IsEmpty(Container(751).ListItem.Art(fanart))">special://skin//extras/backgrounds/SKINDEFAULT.jpg</value>-->
+		
+		<!--custom widgets-->
+		<value condition="Control.HasFocus(551) + !IsEmpty(Container(551).ListItem.Property(background)) + !StringCompare(Container(551).ListItem.Property(background),DefaultAddon)">$INFO[Container(551).ListItem.Property(background)]</value>		
+		<value condition="Control.HasFocus(552) + !IsEmpty(Container(552).ListItem.Property(background)) + StringCompare(Container(552).ListItem.Property(background),DefaultAddon)">$INFO[Container(552).ListItem.Property(background)]</value>		
+		<value condition="Control.HasFocus(553) + !IsEmpty(Container(553).ListItem.Property(background)) + StringCompare(Container(553).ListItem.Property(background),DefaultAddon)">$INFO[Container(553).ListItem.Property(background)]</value>		
+		<value condition="Control.HasFocus(554) + !IsEmpty(Container(554).ListItem.Property(background)) + StringCompare(Container(554).ListItem.Property(background),DefaultAddon)">$INFO[Container(554).ListItem.Property(background)]</value>				
+		<value condition="Control.HasFocus(551) + StringCompare(Container(551).ListItem.Property(background),DefaultAddon)">$INFO[Container(551).ListItem.Property(defaultID),special://home/addons/,/fanart.jpg]</value>
+		<value condition="Control.HasFocus(552) + StringCompare(Container(552).ListItem.Property(background),DefaultAddon)">$INFO[Container(552).ListItem.Property(defaultID),special://home/addons/,/fanart.jpg]</value>
+		<value condition="Control.HasFocus(553) + StringCompare(Container(553).ListItem.Property(background),DefaultAddon)">$INFO[Container(553).ListItem.Property(defaultID),special://home/addons/,/fanart.jpg]</value>
+		<value condition="Control.HasFocus(554) + StringCompare(Container(554).ListItem.Property(background),DefaultAddon)">$INFO[Container(554).ListItem.Property(defaultID),special://home/addons/,/fanart.jpg]</value>
+		
+		<!-- not set: 550 tunein widget -->
+		
+	</variable>
+	
+	<variable name="backgroundMainmenu">
+		<!--home menu-->
+		<value condition="StringCompare(Container(20).ListItem.Property(background),DefaultAddon)">$INFO[Container(20).ListItem.Property(defaultID),special://home/addons/,/fanart.jpg]</value>
+		<value condition="!StringCompare(Container(20).ListItem.Property(background),DefaultAddon)">$INFO[Container(20).ListItem.Property(Background)]</value>
 	</variable>
 
 	<variable name="CustomDialogOKHeadLabel">
@@ -2082,10 +2108,10 @@
 	</variable>
 
 	<variable name="VideoPlayerThumb">
-		<value condition="SubString(Player.Filenameandpath,rtmp://) + !IsEmpty(Player.Art(fanart)">$INFO[Player.Art(fanart)]</value>
-		<value condition="SubString(Player.Filenameandpath,rtmp://) + !IsEmpty(Player.Art(thumb)">$INFO[Player.Art(thumb)]</value>
+		<value condition="SubString(Player.Filenameandpath,rtmp://) + !IsEmpty(Player.Art(fanart))">$INFO[Player.Art(fanart)]</value>
+		<value condition="SubString(Player.Filenameandpath,rtmp://) + !IsEmpty(Player.Art(thumb))">$INFO[Player.Art(thumb)]</value>
 		<value condition="SubString(Player.Filenameandpath,rtmp://)">$INFO[VideoPlayer.Cover]</value>
-		<value condition="SubString(Player.Filenameandpath,http) + !IsEmpty(Player.Art(thumb)">$INFO[Player.Art(thumb)]</value>
+		<value condition="SubString(Player.Filenameandpath,http) + !IsEmpty(Player.Art(thumb))">$INFO[Player.Art(thumb)]</value>
 		<value condition="SubString(Player.Filenameandpath,http)">$INFO[VideoPlayer.Cover]</value>
 		<value condition="!IsEmpty(Player.Art(poster))">$INFO[Player.Art(poster)]</value>
 		<value condition="VideoPlayer.Content(Episodes) + !IsEmpty(Player.Art(tvshow.poster))">$INFO[Player.Art(tvshow.poster)]</value>
