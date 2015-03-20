@@ -3,8 +3,8 @@
 	"font_size": 11,
 	"ignored_packages":
 	[
-		"Indent XML",
 		"Vintage",
-		"TortoiseGIT"
+		"TortoiseGIT",
+		"Indent XML"
 	]
 }
