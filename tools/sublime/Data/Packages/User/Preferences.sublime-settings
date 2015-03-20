@@ -1,0 +1,10 @@
+{
+	"color_scheme": "Packages/User/SublimeLinter/Blackboard (SL).tmTheme",
+	"font_size": 11,
+	"ignored_packages":
+	[
+		"Indent XML",
+		"Vintage",
+		"TortoiseGIT"
+	]
+}

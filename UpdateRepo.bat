@@ -22,7 +22,7 @@ if errorlevel 4 goto Abbruch
 if errorlevel 3 goto Commit
 if errorlevel 2 goto Update
 if errorlevel 1 goto Klone
-
+ 
 
 Rem *** 4 ***
 :Abbruch

@@ -1,0 +1,26 @@
+{
+	"in_process_packages":
+	[
+	],
+	"installed_packages":
+	[
+		"FileBrowser",
+		"GitGutter",
+		"Indent XML",
+		"IndentX",
+		"Package Control",
+		"sublime-github",
+		"sublime-TortoiseGIT",
+		"SublimeGit",
+		"SublimeLinter",
+		"SublimeLinter-xmllint",
+		"SublimeText-KodiTranslateLabels",
+		"Tag",
+		"TortoiseGIT"
+	],
+	"repositories":
+	[
+		"https://github.com/phil65/SublimeText-KodiTranslateLabels",
+		"https://github.com/fyneworks/sublime-TortoiseGIT"
+	]
+}

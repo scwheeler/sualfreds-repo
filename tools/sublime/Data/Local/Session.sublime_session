@@ -1,0 +1,503 @@
+{
+	"folder_history":
+	[
+		"/C/Users/ssaenger/Documents/GitHub/sualfreds-repo",
+		"/C/Program Files (x86)/Kodi/addons/resource.language.en_gb/resources",
+		"/C/Users/ssaenger/Documents/GitHub/Bello-Kodi-15.x-Nightlies",
+		"/C/Program Files (x86)/Kodi"
+	],
+	"last_version": 3065,
+	"last_window_id": 3,
+	"log_indexing": false,
+	"settings":
+	{
+		"new_window_height": 653.0,
+		"new_window_settings":
+		{
+			"auto_complete":
+			{
+				"selected_items":
+				[
+				]
+			},
+			"build_system": "",
+			"command_palette":
+			{
+				"height": 81.0,
+				"selected_items":
+				[
+					[
+						"install",
+						"Package Control: Install Package"
+					],
+					[
+						"packa",
+						"Package Control: Add Repository"
+					],
+					[
+						"set syntax:x",
+						"Set Syntax: XML"
+					],
+					[
+						"snippet",
+						"Snippet: Comment"
+					],
+					[
+						"",
+						"Code Folding: Unfold All"
+					],
+					[
+						"close",
+						"Package Control: Install Package"
+					],
+					[
+						"auto",
+						"Auto indent"
+					],
+					[
+						"xml",
+						"Indent XML"
+					],
+					[
+						"pac",
+						"Package Control: Install Package"
+					],
+					[
+						"uninst",
+						"GitGutter: Show Comparing Against"
+					],
+					[
+						"tortoise",
+						"TortoiseSVN: Commit"
+					],
+					[
+						"instlal",
+						"Package Control: Install Package"
+					],
+					[
+						"brow",
+						"Browse Mode: Left Sidebar"
+					]
+				],
+				"width": 400.0
+			},
+			"console":
+			{
+				"height": 126.0,
+				"history":
+				[
+					"import urllib.request,os,hashlib; h = 'eb2297e1a458f27d836c04bb0cbaf282' + 'd0e7a3098092775ccb37ca9d6b2e4b7d'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)"
+				]
+			},
+			"distraction_free":
+			{
+				"menu_visible": true,
+				"show_minimap": false,
+				"show_open_files": false,
+				"show_tabs": false,
+				"side_bar_visible": false,
+				"status_bar_visible": false
+			},
+			"file_history":
+			[
+				"/C/Users/ssaenger/Desktop/sublime/Data/Packages/KodiTranslateLabels/KodiTranslateLabels.sublime-settings",
+				"/C/Users/ssaenger/Desktop/sublime/Data/Packages/User/Default (Windows).sublime-keymap",
+				"/C/Users/ssaenger/Documents/GitHub/Bello-Kodi-15.x-Nightlies/720p/Custom_ManageDialog.xml",
+				"/C/Users/ssaenger/Documents/GitHub/Bello-Kodi-15.x-Nightlies/720p/Custom_CustomItems.xml",
+				"/C/Users/ssaenger/Documents/GitHub/Bello-Kodi-15.x-Nightlies/720p/Custom_MoviesHomeWidgets.xml",
+				"/C/Users/ssaenger/Documents/GitHub/Bello-Kodi-15.x-Nightlies/720p/DialogButtonMenu.xml",
+				"/C/Users/ssaenger/Desktop/sublime/Data/Packages/Tag/Tag Package.sublime-settings",
+				"/C/Users/ssaenger/Documents/GitHub/Bello-Kodi-15.x-Nightlies/720p/Font.xml",
+				"/C/Users/ssaenger/Documents/GitHub/Bello-Kodi-15.x-Nightlies/fonts/Apache License Version 2.0.txt",
+				"/C/Users/ssaenger/Documents/GitHub/Bello-Kodi-15.x-Nightlies/720p/script-globalsearch-infodialog.xml",
+				"/C/Users/ssaenger/Documents/GitHub/Bello-Kodi-15.x-Nightlies/720p/defaults.xml",
+				"/C/Users/ssaenger/Documents/GitHub/Bello-Kodi-15.x-Nightlies/720p/DialogSongInfo.xml",
+				"/C/Users/ssaenger/Documents/GitHub/Bello-Kodi-15.x-Nightlies/720p/DialogAddonInfo.xml",
+				"/C/Users/ssaenger/Documents/GitHub/Bello-Kodi-15.x-Nightlies/720p/DialogBusy.xml",
+				"/C/Users/ssaenger/Documents/GitHub/Bello-Kodi-15.x-Nightlies/720p/Custom_DialogOK.xml",
+				"/C/Users/ssaenger/Documents/GitHub/Bello-Kodi-15.x-Nightlies/720p/Custom_DialogVisualization.xml",
+				"/C/Users/ssaenger/Documents/GitHub/Bello-Kodi-15.x-Nightlies/720p/Custom_RSS.xml",
+				"/C/Users/ssaenger/Documents/GitHub/Bello-Kodi-15.x-Nightlies/720p/Custom_Reset.xml",
+				"/C/Users/ssaenger/Documents/GitHub/Bello-Kodi-15.x-Nightlies/720p/Custom_Refresh.xml",
+				"/C/Users/ssaenger/Documents/GitHub/Bello-Kodi-15.x-Nightlies/720p/Custom_Overlay.xml",
+				"/C/Users/ssaenger/Documents/GitHub/Bello-Kodi-15.x-Nightlies/sounds/Cursor.wav",
+				"/C/Users/ssaenger/Documents/GitHub/Bello-Kodi-15.x-Nightlies/changelog.txt",
+				"/C/Users/ssaenger/Documents/GitHub/Bello-Kodi-15.x-Nightlies/addon.xml",
+				"/C/Users/ssaenger/Documents/GitHub/Bello-Kodi-15.x-Nightlies/720p/DialogAddonSettings.xml",
+				"/C/Users/ssaenger/Documents/GitHub/Bello-Kodi-15.x-Nightlies/shortcuts/addons.DATA.xml",
+				"/C/Users/ssaenger/Documents/GitHub/Bello-Kodi-15.x-Nightlies/720p/script-Actors-DialogInfo.xml",
+				"/C/Users/ssaenger/Documents/GitHub/Bello-Kodi-15.x-Nightlies/720p/DialogFavourites.xml",
+				"/C/Users/ssaenger/Documents/GitHub/Bello-Kodi-15.x-Nightlies/720p/script-XBMC_Lyrics-main.xml",
+				"/C/Users/ssaenger/Desktop/sublime/Data/Packages/User/TortoiseSVN.sublime-settings",
+				"/C/Users/ssaenger/Desktop/sublime/Data/Packages/TortoiseSVN/TortoiseSVN.sublime-settings"
+			],
+			"find":
+			{
+				"height": 26.0
+			},
+			"find_in_files":
+			{
+				"height": 90.0,
+				"where_history":
+				[
+					"C:\\Users\\ssaenger\\Documents\\GitHub\\Bello-Kodi-15.x-Nightlies\\720p"
+				]
+			},
+			"find_state":
+			{
+				"case_sensitive": false,
+				"find_history":
+				[
+					"<!--"
+				],
+				"highlight": true,
+				"in_selection": false,
+				"preserve_case": false,
+				"regex": false,
+				"replace_history":
+				[
+				],
+				"reverse": false,
+				"show_context": true,
+				"use_buffer2": true,
+				"whole_word": false,
+				"wrap": true
+			},
+			"incremental_find":
+			{
+				"height": 26.0
+			},
+			"input":
+			{
+				"height": 34.0
+			},
+			"menu_visible": true,
+			"output.find_results":
+			{
+				"height": 0.0
+			},
+			"replace":
+			{
+				"height": 48.0
+			},
+			"save_all_on_build": true,
+			"select_file":
+			{
+				"height": 0.0,
+				"selected_items":
+				[
+					[
+						"custom",
+						"720p\\Custom_DialogOK.xml"
+					]
+				],
+				"width": 0.0
+			},
+			"select_project":
+			{
+				"height": 500.0,
+				"selected_items":
+				[
+				],
+				"width": 380.0
+			},
+			"select_symbol":
+			{
+				"height": 0.0,
+				"selected_items":
+				[
+				],
+				"width": 0.0
+			},
+			"show_minimap": true,
+			"show_open_files": false,
+			"show_tabs": true,
+			"side_bar_visible": true,
+			"side_bar_width": 367.0,
+			"status_bar_visible": true,
+			"template_settings":
+			{
+			}
+		},
+		"new_window_width": 1552.0
+	},
+	"windows":
+	[
+		{
+			"auto_complete":
+			{
+				"selected_items":
+				[
+				]
+			},
+			"buffers":
+			[
+			],
+			"build_system": "",
+			"command_palette":
+			{
+				"height": 392.0,
+				"selected_items":
+				[
+					[
+						"torti",
+						"TortoiseGIT: Commit"
+					],
+					[
+						"install",
+						"Package Control: Install Package"
+					],
+					[
+						"packa",
+						"Package Control: Add Repository"
+					],
+					[
+						"set syntax:x",
+						"Set Syntax: XML"
+					],
+					[
+						"snippet",
+						"Snippet: Comment"
+					],
+					[
+						"",
+						"Code Folding: Unfold All"
+					],
+					[
+						"close",
+						"Package Control: Install Package"
+					],
+					[
+						"auto",
+						"Auto indent"
+					],
+					[
+						"xml",
+						"Indent XML"
+					],
+					[
+						"pac",
+						"Package Control: Install Package"
+					],
+					[
+						"uninst",
+						"GitGutter: Show Comparing Against"
+					],
+					[
+						"tortoise",
+						"TortoiseSVN: Commit"
+					],
+					[
+						"instlal",
+						"Package Control: Install Package"
+					],
+					[
+						"brow",
+						"Browse Mode: Left Sidebar"
+					]
+				],
+				"width": 424.0
+			},
+			"console":
+			{
+				"height": 126.0,
+				"history":
+				[
+					"import urllib.request,os,hashlib; h = 'eb2297e1a458f27d836c04bb0cbaf282' + 'd0e7a3098092775ccb37ca9d6b2e4b7d'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)"
+				]
+			},
+			"distraction_free":
+			{
+				"menu_visible": true,
+				"show_minimap": false,
+				"show_open_files": false,
+				"show_tabs": false,
+				"side_bar_visible": false,
+				"status_bar_visible": false
+			},
+			"expanded_folders":
+			[
+				"/C/Users/ssaenger/Documents/GitHub/Bello-Kodi-15.x-Nightlies",
+				"/C/Program Files (x86)/Kodi/addons/resource.language.en_gb/resources"
+			],
+			"file_history":
+			[
+				"/C/Users/ssaenger/Documents/GitHub/sualfreds-repo/UpdateRepo.bat",
+				"/C/Users/ssaenger/Desktop/sublime/Data/Packages/KodiTranslateLabels/KodiTranslateLabels.sublime-settings",
+				"/C/Users/ssaenger/Desktop/sublime/Data/Packages/User/Default (Windows).sublime-keymap",
+				"/C/Users/ssaenger/Documents/GitHub/Bello-Kodi-15.x-Nightlies/720p/Custom_ManageDialog.xml",
+				"/C/Users/ssaenger/Documents/GitHub/Bello-Kodi-15.x-Nightlies/720p/Custom_CustomItems.xml",
+				"/C/Users/ssaenger/Documents/GitHub/Bello-Kodi-15.x-Nightlies/720p/Custom_MoviesHomeWidgets.xml",
+				"/C/Users/ssaenger/Documents/GitHub/Bello-Kodi-15.x-Nightlies/720p/DialogButtonMenu.xml",
+				"/C/Users/ssaenger/Desktop/sublime/Data/Packages/Tag/Tag Package.sublime-settings",
+				"/C/Users/ssaenger/Documents/GitHub/Bello-Kodi-15.x-Nightlies/720p/Font.xml",
+				"/C/Users/ssaenger/Documents/GitHub/Bello-Kodi-15.x-Nightlies/fonts/Apache License Version 2.0.txt",
+				"/C/Users/ssaenger/Documents/GitHub/Bello-Kodi-15.x-Nightlies/720p/script-globalsearch-infodialog.xml",
+				"/C/Users/ssaenger/Documents/GitHub/Bello-Kodi-15.x-Nightlies/720p/defaults.xml",
+				"/C/Users/ssaenger/Documents/GitHub/Bello-Kodi-15.x-Nightlies/720p/DialogSongInfo.xml",
+				"/C/Users/ssaenger/Documents/GitHub/Bello-Kodi-15.x-Nightlies/720p/DialogAddonInfo.xml",
+				"/C/Users/ssaenger/Documents/GitHub/Bello-Kodi-15.x-Nightlies/720p/DialogBusy.xml",
+				"/C/Users/ssaenger/Documents/GitHub/Bello-Kodi-15.x-Nightlies/720p/Custom_DialogOK.xml",
+				"/C/Users/ssaenger/Documents/GitHub/Bello-Kodi-15.x-Nightlies/720p/Custom_DialogVisualization.xml",
+				"/C/Users/ssaenger/Documents/GitHub/Bello-Kodi-15.x-Nightlies/720p/Custom_RSS.xml",
+				"/C/Users/ssaenger/Documents/GitHub/Bello-Kodi-15.x-Nightlies/720p/Custom_Reset.xml",
+				"/C/Users/ssaenger/Documents/GitHub/Bello-Kodi-15.x-Nightlies/720p/Custom_Refresh.xml",
+				"/C/Users/ssaenger/Documents/GitHub/Bello-Kodi-15.x-Nightlies/720p/Custom_Overlay.xml",
+				"/C/Users/ssaenger/Documents/GitHub/Bello-Kodi-15.x-Nightlies/sounds/Cursor.wav",
+				"/C/Users/ssaenger/Documents/GitHub/Bello-Kodi-15.x-Nightlies/changelog.txt",
+				"/C/Users/ssaenger/Documents/GitHub/Bello-Kodi-15.x-Nightlies/addon.xml",
+				"/C/Users/ssaenger/Documents/GitHub/Bello-Kodi-15.x-Nightlies/720p/DialogAddonSettings.xml",
+				"/C/Users/ssaenger/Documents/GitHub/Bello-Kodi-15.x-Nightlies/shortcuts/addons.DATA.xml",
+				"/C/Users/ssaenger/Documents/GitHub/Bello-Kodi-15.x-Nightlies/720p/script-Actors-DialogInfo.xml",
+				"/C/Users/ssaenger/Documents/GitHub/Bello-Kodi-15.x-Nightlies/720p/DialogFavourites.xml",
+				"/C/Users/ssaenger/Documents/GitHub/Bello-Kodi-15.x-Nightlies/720p/script-XBMC_Lyrics-main.xml",
+				"/C/Users/ssaenger/Desktop/sublime/Data/Packages/User/TortoiseSVN.sublime-settings",
+				"/C/Users/ssaenger/Desktop/sublime/Data/Packages/TortoiseSVN/TortoiseSVN.sublime-settings"
+			],
+			"find":
+			{
+				"height": 34.0
+			},
+			"find_in_files":
+			{
+				"height": 90.0,
+				"where_history":
+				[
+					"C:\\Users\\ssaenger\\Documents\\GitHub\\Bello-Kodi-15.x-Nightlies\\720p"
+				]
+			},
+			"find_state":
+			{
+				"case_sensitive": false,
+				"find_history":
+				[
+					"<!--"
+				],
+				"highlight": true,
+				"in_selection": false,
+				"preserve_case": false,
+				"regex": false,
+				"replace_history":
+				[
+				],
+				"reverse": false,
+				"show_context": true,
+				"use_buffer2": true,
+				"whole_word": false,
+				"wrap": true
+			},
+			"folders":
+			[
+				{
+					"follow_symlinks": true,
+					"path": "C:\\Users\\ssaenger\\Documents\\GitHub\\Bello-Kodi-15.x-Nightlies"
+				},
+				{
+					"follow_symlinks": true,
+					"path": "C:\\Program Files (x86)\\Kodi\\addons\\resource.language.en_gb\\resources"
+				}
+			],
+			"groups":
+			[
+				{
+					"sheets":
+					[
+					]
+				}
+			],
+			"incremental_find":
+			{
+				"height": 26.0
+			},
+			"input":
+			{
+				"height": 34.0
+			},
+			"layout":
+			{
+				"cells":
+				[
+					[
+						0,
+						0,
+						1,
+						1
+					]
+				],
+				"cols":
+				[
+					0.0,
+					1.0
+				],
+				"rows":
+				[
+					0.0,
+					1.0
+				]
+			},
+			"menu_visible": true,
+			"output.find_results":
+			{
+				"height": 0.0
+			},
+			"position": "0,0,1,-32000,-32000,-1,-1,936,225,225,1793",
+			"project": "",
+			"replace":
+			{
+				"height": 48.0
+			},
+			"save_all_on_build": true,
+			"select_file":
+			{
+				"height": 0.0,
+				"selected_items":
+				[
+					[
+						"custom",
+						"720p\\Custom_DialogOK.xml"
+					]
+				],
+				"width": 0.0
+			},
+			"select_project":
+			{
+				"height": 500.0,
+				"selected_items":
+				[
+				],
+				"width": 380.0
+			},
+			"select_symbol":
+			{
+				"height": 0.0,
+				"selected_items":
+				[
+				],
+				"width": 0.0
+			},
+			"selected_group": 0,
+			"settings":
+			{
+			},
+			"show_minimap": true,
+			"show_open_files": false,
+			"show_tabs": true,
+			"side_bar_visible": true,
+			"side_bar_width": 367.0,
+			"status_bar_visible": true,
+			"template_settings":
+			{
+			},
+			"window_id": 3,
+			"workspace_name": ""
+		}
+	],
+	"workspaces":
+	{
+		"recent_workspaces":
+		[
+			"/C/Users/ssaenger/Documents/GitHub/Bello-Kodi-15.x-Nightlies/test.sublime-workspace",
+			"/C/Users/ssaenger/Documents/GitHub/Bello-Kodi-15.x-Nightlies/720p/skin.bellofredo.sublime-workspace"
+		]
+	}
+}
