@@ -33,7 +33,7 @@
 				<description>Default Background</description>
 				<include>FullscreenDimensions</include>
 				<include>BackgroundFade</include>
-				<texture background="true">special://skin/extras/backgrounds/SKINDEFAULT.jpg</texture>
+				<texture background="true">SKINDEFAULT.jpg</texture>
 				<visible>![Skin.HasSetting(CustomBackground) + !IsEmpty(Skin.String(CustomImageBackgroundPath))]</visible>
 				<visible>![Skin.HasSetting(CustomBackground) + ![IsEmpty(Skin.String(CustomFolderBackgroundPath)) | Skin.HasSetting(ShowCustomBackgroundOnHomeOnly)]]</visible>
 				<fadetime>FanartCrossfadeTime</fadetime>
@@ -205,7 +205,7 @@
 			<include>FanartFade</include>
 			<fadetime>FanartCrossfadeTime</fadetime>
 			<visible>!Skin.HasSetting(HideBGFanart)</visible>
-			<visible>![[Control.IsVisible(55) | Control.IsVisible(59)] + !Window.IsActive(movieinformation)] + !Control.IsVisible(580) + IsEmpty(Control.GetLabel(5901))</visible>
+			<visible>![[Control.IsVisible(55) | Control.IsVisible(59)] + !Window.IsActive(movieinformation)] + !Control.IsVisible(580) + !Control.IsVisible(581) + [IsEmpty(Control.GetLabel(5901) | !Skin.HasSetting(ViewsExtraFanart))]</visible>
 			<animation effect="fade" start="100" end="40" time="300" condition="Window.IsActive(PlayerControls)">Conditional</animation>
 		</control>
 		<control type="multiimage" id="5901">
@@ -218,12 +218,12 @@
 			<imagepath background="true">$INFO[ListItem.Path,,/extrafanart/]</imagepath>
 			<include>FanartFade</include>
 			<visible>!Skin.HasSetting(HideBGFanart)</visible>
-			<visible>![[Control.IsVisible(55) | Control.IsVisible(59)] + !Window.IsActive(movieinformation)] + !Control.IsVisible(580) + Skin.HasSetting(ViewsExtraFanart)</visible>
+			<visible>![[Control.IsVisible(55) | Control.IsVisible(59)] + !Window.IsActive(movieinformation)] + !Control.IsVisible(580) + !Control.IsVisible(581) + Skin.HasSetting(ViewsExtraFanart)</visible>
 			<animation effect="fade" start="100" end="40" time="300" condition="Window.IsActive(PlayerControls)">Conditional</animation>
 		</control>	
 		<control type="image">
 			<include>NetFilx Fanart Transparency</include>
-			<texture background="true">special://skin/extras/backgrounds/SKINDEFAULT.jpg</texture>
+			<texture background="true">SKINDEFAULT.jpg</texture>
 			<include>FanartFade</include>
 			<visible>!Skin.HasSetting(HideBGFanart)</visible>
 			<visible>[!Skin.HasSetting(NetFilxSemiTrans) + Control.IsVisible(59) + !Window.IsActive(movieinformation)]</visible>
@@ -328,6 +328,7 @@
 				| Control.IsVisible(56)
 				| Control.IsVisible(560)
 				| Control.IsVisible(561)
+				| Control.IsVisible(582)
 				| Window.IsActive(PlayerControls)
 				| Window.IsActive(shutdownmenu)
 				| Window.IsActive(weather)
@@ -340,6 +341,13 @@
 				| [Window.IsActive(script-ExtendedInfo Script-DialogInfo.xml) + !Window.IsActive(movieinformation)]
 				| [Window.IsActive(script-ExtendedInfo Script-DialogVideoInfo.xml) + !Window.IsActive(movieinformation)]
 			</visible>
+		</control>
+		<control type="image">
+			<include>FullscreenDimensions</include>
+			<texture background="true">windows/bg/bg_diffuse.png</texture>
+			<include>FanartFade</include>
+			<animation effect="fade" time="0" end="40" condition="Control.IsVisible(582) + ![Window.IsActive(favourites) | Window.IsActive(movieinformation) | Window.IsActive(shutdownmenu) | Window.IsActive(playercontrols)]">Conditional</animation>
+			<visible>Control.IsVisible(582)</visible>
 		</control>
 	</include>
 
