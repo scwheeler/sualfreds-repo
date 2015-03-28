@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<settings>
+	<setting type="lsep" label="30102" />
+	<setting id="enableResume"	type="bool"		default="true"	label="enable movie resume point" />
+	<setting id="enableDiff"	type="bool"		default="true"	label="enable rating difference" />
+	<setting id="hideMovies"	type="bool"		default="false"	label="hide movie progress" />
+	<setting id="hideTop250"	type="bool"		default="false"	label="hide Top250 progress" />
+	<setting id="deamonMovies"	type="bool"		default="false"	label="run Movies periodically (weekly)" />
+	<setting id="deamonTop250"	type="bool"		default="false"	label="run Top250 periodically (weekly)" />
+</settings>
