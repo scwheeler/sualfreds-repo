@@ -96,8 +96,45 @@ for /f %%f in ('dir /b /a:d') do if exist %%f\addon.xml (
 			XCOPY %%f\media temp\%%f\media /E /C /Q /I /Y
 			rd /S /Q %%f\media
 			mkdir %%f\media
-			echo Erstelle Textures.xbt ... wart a weile Bub
-			%tools_dir%\TexturePacker -input temp\%%f\media -output %%f\media\Textures.xbt >nul 2>&1
+			ECHO -------------------------------------------------------------------------
+ECHO ^> ** Creating excludes... **
+
+ECHO .svn>exclude.txt
+ECHO .git>>exclude.txt
+ECHO Thumbs.db>>exclude.txt
+ECHO Desktop.ini>>exclude.txt
+ECHO dsstdfx.bin>>exclude.txt
+ECHO exclude.txt>>exclude.txt
+ECHO temp\%%f\media\Original-Bello.xbt>>exclude.txt
+ECHO temp\%%f\media\ElegantDark.xbt>>exclude.txt
+
+ECHO -------------------------------------------------------------------------
+ECHO.
+
+ECHO -------------------------------------------------------------------------
+ECHO                   ** Creating Textures XBT File... **
+ECHO -------------------------------------------------------------------------
+
+ECHO.
+PING -n 2 -w 1000 127.0.0.1 > NUL
+START /B /WAIT %tools_dir%\TexturePacker -input temp\%%f\media -output %%f\media\Textures.xbt
+PING -n 2 -w 20000 127.0.0.1 > NUL
+ECHO.
+ECHO.
+ECHO -------------------------------------------------------------------------
+ECHO ^> Deleting excludes...
+DEL exclude.txt
+ECHO ^> Done
+ECHO -------------------------------------------------------------------------
+ECHO.
+ECHO.
+XCOPY temp\%%f\media\*.xbt %%f\media
+ECHO -------------------------------------------------------------------------
+ECHO        ** XBT build complete - scroll up to check for errors. **
+ECHO -------------------------------------------------------------------------
+
+Pause
+			
 		)
 		echo Packe %%f-!version!.zip
 		%tools_dir%\7z a %%f\%%f-!version!.zip %%f -tzip -ax!%%f*.zip> nul
