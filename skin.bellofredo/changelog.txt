@@ -1,4 +1,7 @@
-﻿[B][COLOR=FF56ADDA]v4.0.17[/COLOR][/B]
+﻿[B][COLOR=FF56ADDA]v4.0.17a[/COLOR][/B]
+• Fixed: Bug with textures.xbt
+
+[B][COLOR=FF56ADDA]v4.0.17[/COLOR][/B]
 • Added: New default theme
 • Added: Original-Bello theme
 • Fixed: FSK6 rating flag
